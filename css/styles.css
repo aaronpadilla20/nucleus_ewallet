@@ -36,8 +36,359 @@ img {
     max-width: 100%;
     display: block;
 }
-.contenedor {
+
+[class$="__contenedor"]{ /* Aplica estilos a los elementos que tengan una clase que finalicen con contenedor */
     max-width: 120rem;
     margin: 0 auto;
     width: 90%;
+}
+
+[class$="__heading"]{
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+@media (min-width: 768px) {
+    [class$="__grid"]{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        column-gap: 5rem;
+    } 
+}
+
+/** Header **/
+.header{
+    background-image: url(../img/header_bg.svg);
+    background-repeat: no-repeat;
+    background-position: top right;
+    padding: 5rem 0;
+    background-size: 10rem;
+}
+
+@media (min-width: 768px) {
+    .header{
+        background-size: 50rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .header{
+        background-size: 60rem;
+    }
+}
+
+@media (min-width: 1280px) {
+    .header{
+        background-size: 100rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .header__barra{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.header__logo{
+    width: 15rem;
+    margin: 0 auto 3rem auto;
+}
+
+@media (min-width: 768px) {
+    .header__logo{
+        margin: 0;
+    }
+
+    .header__grid{
+        gap: 4rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .header__imagen{
+        max-width: 22rem;
+        margin: 0 auto;
+    }    
+}
+
+@media (min-width: 1280px) {
+    .header__imagen{
+        max-width: 30rem;
+        margin: 0 auto;
+    } 
+}
+
+.header__boton{
+    background-color: var(--primario);
+    display: block;
+    color: var(--blanco);
+    padding: 1rem;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+    .header__boton{
+        display: inline-block;
+        padding: 1rem 3rem;
+    }
+}
+
+.header__heading{
+    font-size: 3rem;
+}
+
+@media (min-width: 768px) {
+    .header__heading{
+        text-align: left;
+        font-size: 5rem;
+        line-height: 1.2;
+    }
+}
+
+.navegacion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .navegacion{
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+}
+.navegacion__link{
+    color: var(--primario);
+}
+
+@media (min-width: 768px) {
+    .navegacion__link{
+        color: var(--blanco);
+    }
+}
+
+.navegacion__link--blanco{
+    color: var(--blanco);
+}
+
+/** Que es **/
+.nucleus{
+    margin-top: 3rem;
+}
+
+.nucleus__grid{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+@media (min-width: 768px) {
+    .nucleus__grid{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }   
+}
+
+.listado{
+
+}
+
+.listado__elemento{
+            /*  horizontal verticial blur (borrosa) spread color */
+    box-shadow: 0px 0px 15px 3px rgb(0 0 0 / .15);
+    padding: 2rem;
+    margin-bottom: 5rem;
+    transition: transform 300ms;
+    background-color: var(--blanco);
+}
+
+.listado__elemento:hover{
+    transform: scale(1.1);
+}
+
+@media (min-width: 768px) {
+    .listado__elemento--2columnas{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+    }    
+}
+
+
+.listado__heading{
+    font-size: 3rem;
+    color: var(--primario);
+    margin: 0;
+}
+
+.listado__numero{
+    font-size: 6rem;
+    margin: 0;
+    font-weight: 900;
+    color: var(--primario);
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .listado__numero{
+        flex-basis: 20rem;
+        text-align: right;
+        font-size: 4rem;
+    }
+}
+
+.listado__texto{
+    margin: 0;
+    font-size: 2rem;
+}
+
+/** Seguridad **/
+.seguridad{
+    background-color: var(--primario);
+    padding: 20rem 0;
+    position: relative;
+    margin: 10rem 0;
+    overflow: hidden;
+}
+
+.seguridad::before,
+.seguridad::after{
+    background-color: var(--blanco);
+    content: '';
+    height: 20rem;
+    width: 120%;
+    position: absolute;
+}
+
+.seguridad::before{
+    top: -10rem;
+    left: 0;
+    transform: rotate(3deg);
+}
+
+.seguridad::after{
+    bottom: -10rem;
+    left: -3rem;
+    transform: rotate(3deg);
+}
+
+.seguridad__heading{
+    color: var(--blanco);
+}
+
+/** Comisiones **/
+.comisiones__texto{
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: 700;
+}
+
+@media (min-width: 768px) {
+    .comisiones_texto{
+        text-align: left;
+    }
+}
+
+@media (min-width: 768px) {
+    .comisiones__grid{
+        align-items: flex-end;
+    }    
+}
+
+@media (min-width: 998px) {
+    .comisiones__grid{
+        align-items: center;
+    }   
+}
+
+/** Testimonial **/
+.testimoniales{
+    background-color: var(--primario);
+    padding: 5rem 0;
+}
+
+.testimoniales__heading{
+    font-size: 3.5rem;
+    color: var(--blanco);
+}
+
+@media (min-width: 480px) {
+    .testimoniales__heading{
+        font-size: 5rem;
+    }
+}
+
+.testimonial{
+    background-color: var(--blanco);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0px 0px 15px 3px rgb(0 0 0 / .15);
+    position: relative;
+}
+
+.testimonial:last-of-type{
+    margin: 0;
+}
+
+@media (min-width: 768px) {
+    .testimonial{
+        margin: 0;
+    }
+
+    .testimoniales__grid{
+        row-gap: 4rem;
+    }
+}
+
+.testimonial__texto::before{
+    content: '';
+    width: 3rem;
+    height: 3rem;
+    display: block;
+    background-image: url(../img/comilla.png);
+    background-size: 3rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 3.5rem;
+    left: 2rem;
+}
+
+.testimonial__texto{
+    padding-left: 4rem;
+}
+
+.testimonial__autor{
+    text-align: right;
+    color: var(--primario);
+    font-weight: 700;
+}
+
+/** Footer **/
+.footer{
+    background-color: #5a30a0;
+    padding: 3rem 0;
+}
+
+@media (min-width: 768px) {
+    .footer__grid{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.footer__logo{
+    width: 20rem;
+    margin: 0 auto 4rem auto;
+}
+
+@media (min-width: 768px) {
+    .footer__logo{
+        margin: 0;
+    }
 }
